@@ -18,7 +18,7 @@
 				<div class="content">
 					<h1><a href="#">Alliance Partner Portal File Upload Demo</a></h1>
 				</div>
-				  <div style="text-align:center">
+				  <div class="content">
 					<button id="flatfile-button">Upload your Client Roster</button>
 				  </div>
 				  <script src="https://unpkg.com/@flatfile/adapter/build/dist/index.min.js"></script>
@@ -28,8 +28,11 @@
 					  {
 						type: "Import type",
 						fields: [
-						  { label: "Name", key: "name" },
-						  { label: "Email", key: "email_address" }
+						  { label: "First Name", key: "fname" },
+						  { label: "Last Name", key: "lname" },
+						  { label: "Email", key: "email_address" },
+						  { label: "Gender", key: "gender" },
+						  { label: "Service", key: "service" }
 						],
 						managed: true
 					  }
