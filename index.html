@@ -18,25 +18,36 @@
 			<header id="header">
 				<div class="content">
 					<h1><a href="#">Alliance Partner Portal File Upload Demo</a></h1>
-						<button onclick="importer.requestDataFromUser().then(function(results) { 
-							// do something with the results
-							importer.displaySuccess('Thanks for uploading your data!')
-						})">Start Import</button>
-						
-						<script src="https://unpkg.com/@flatfile/adapter/build/dist/index.min.js"></script>
-						
-						<script>
-						const importer = new FlatfileImporter("b7793ea8-1939-4876-bb48-61b2bafc3c4f", {
-						  type: "imports",
-						  fields: [
-							  {key: "name", label: "Name"},
-							  {key: "email", label: "Email"}
+					<div>
+						<button id="flatfile-button">Start Flatfile</button>
+					  </div>
+					  <script src="https://unpkg.com/@flatfile/adapter/build/dist/index.min.js"></script>
+					  <script>
+						const importer = new FlatfileImporter(
+						  "b7793ea8-1939-4876-bb48-61b2bafc3c4f",
+						  {
+							type: "Import type",
+							fields: [
+							  { label: "Name", key: "name" },
+							  { label: "Email", key: "email_address" }
 							],
-						  managed: true,
-						});
-						
-						importer.setCustomer({userId: "12345"});
-						</script>
+							managed: true
+						  }
+						);
+				  
+						importer.setCustomer({ userId: "54321", name: "John Doe", email: "john@doe.com", companyName: "Doe Industries", companyId: "12345" });
+				  
+						const startImport = () => {
+						  importer.requestDataFromUser().then(function (results) {
+							console.log(results);
+							importer.displaySuccess("Thank you for your import!");
+						  });
+						};
+				  
+						const flatfileButton = document.getElementById("flatfile-button");
+				  
+						flatfileButton.addEventListener("click", startImport);
+					  </script>
 				</div>
 			</header>
 
