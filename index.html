@@ -18,38 +18,38 @@
 			<header id="header">
 				<div class="content">
 					<h1><a href="#">Alliance Partner Portal File Upload Demo</a></h1>
-					<div>
-						<button id="flatfile-button">Start Flatfile</button>
-					  </div>
-					  <script src="https://unpkg.com/@flatfile/adapter/build/dist/index.min.js"></script>
-					  <script>
-						const importer = new FlatfileImporter(
-						  "b7793ea8-1939-4876-bb48-61b2bafc3c4f",
-						  {
-							type: "Import type",
-							fields: [
-							  { label: "Name", key: "name" },
-							  { label: "Email", key: "email_address" }
-							],
-							managed: true
-						  }
-						);
-				  
-						importer.setCustomer({ userId: "54321", name: "John Doe", email: "john@doe.com", companyName: "Doe Industries", companyId: "12345" });
-				  
-						const startImport = () => {
-						  importer.requestDataFromUser().then(function (results) {
-							console.log(results);
-							importer.displaySuccess("Thank you for your import!");
-						  });
-						};
-				  
-						const flatfileButton = document.getElementById("flatfile-button");
-				  
-						flatfileButton.addEventListener("click", startImport);
-					  </script>
 				</div>
 			</header>
+			<body>					<div>
+				<button id="flatfile-button">Start Flatfile</button>
+			  </div>
+			  <script src="https://unpkg.com/@flatfile/adapter/build/dist/index.min.js"></script>
+			  <script>
+				const importer = new FlatfileImporter(
+				  "b7793ea8-1939-4876-bb48-61b2bafc3c4f",
+				  {
+					type: "Import type",
+					fields: [
+					  { label: "Name", key: "name" },
+					  { label: "Email", key: "email_address" }
+					],
+					managed: true
+				  }
+				);
+		  
+				importer.setCustomer({ userId: "54321", name: "John Doe", email: "john@doe.com", companyName: "Doe Industries", companyId: "12345" });
+		  
+				const startImport = () => {
+				  importer.requestDataFromUser().then(function (results) {
+					console.log(results);
+					importer.displaySuccess("Thank you for your import!");
+				  });
+				};
+		  
+				const flatfileButton = document.getElementById("flatfile-button");
+		  
+				flatfileButton.addEventListener("click", startImport);
+			  </script></body>
 
 		<!-- Four -->
 		<!--
