@@ -1,65 +1,38 @@
-<!DOCTYPE HTML>
-<!--
-	Fractal by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+<!DOCTYPE html>
 <html>
-	<head>
-		<title>Alliance Flatfile Demo</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-		<!-- Header -->
-			<header id="header">
-				<div class="content">
-					<h1><a href="#">Alliance Partner Portal File Upload Demo</a></h1>
-				</div>
-				<div>
-					<button id="flatfile-button">Upload your Client Roster</button>
-				  </div>
-				  <script src="https://unpkg.com/@flatfile/adapter/build/dist/index.min.js"></script>
-				  <script>
-					const importer = new FlatfileImporter(
-					  "b7793ea8-1939-4876-bb48-61b2bafc3c4f",
-					  {
-						type: "Import type",
-						fields: [
-						  { label: "Name", key: "name" },
-						  { label: "Email", key: "email_address" }
-						],
-						managed: true
-					  }
-					);
-			  
-					importer.setCustomer({ userId: "54321", name: "John Doe", email: "john@doe.com", companyName: "Doe Industries", companyId: "12345" });
-			  
-					const startImport = () => {
-					  importer.requestDataFromUser().then(function (results) {
-						console.log(results);
-						importer.displaySuccess("Thank you for your import!");
-					  });
-					};
-			  
-					const flatfileButton = document.getElementById("flatfile-button");
-			  
-					flatfileButton.addEventListener("click", startImport);
-				  </script>
-				  </div>
-			</header>
-		<!-- Footer -->
-			<footer id="footer">
+  <head>
+    <title>Flatfile Test</title>
+  </head>
+  <body>
+    <div>
+      <button id="flatfile-button">Start Flatfile</button>
+    </div>
+    <script src="https://unpkg.com/@flatfile/adapter/build/dist/index.min.js"></script>
+    <script>
+      const importer = new FlatfileImporter(
+        "b7793ea8-1939-4876-bb48-61b2bafc3c4f",
+        {
+          type: "Import type",
+          fields: [
+            { label: "Name", key: "name" },
+            { label: "Email", key: "email_address" }
+          ],
+          managed: true
+        }
+      );
 
-				<p class="copyright">&copy; Blake F. Credits: <a href="http://html5up.net">HTML5 UP</a></p>
-			</footer>
+      importer.setCustomer({ userId: "54321", name: "John Doe", email: "john@doe.com", companyName: "Doe Industries", companyId: "12345" });
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+      const startImport = () => {
+        importer.requestDataFromUser().then(function (results) {
+          console.log(results);
+          importer.displaySuccess("Thank you for your import!");
+        });
+      };
+
+      const flatfileButton = document.getElementById("flatfile-button");
+
+      flatfileButton.addEventListener("click", startImport);
+    </script>
+  </body>
 </html>
