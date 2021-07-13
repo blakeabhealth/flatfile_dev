@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Fractal by HTML5 UP</title>
+		<title>Alliance Flatfile Demo</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -17,29 +17,27 @@
 		<!-- Header -->
 			<header id="header">
 				<div class="content">
-					<h1><a href="#">Fractal</a></h1>
-					<button onclick="importer.requestDataFromUser().then(function(results) { 
-						// do something with the results
-						importer.displaySuccess('Thanks for uploading your data!')
-					})">Start Import</button>
-					
-					<script src="https://unpkg.com/@flatfile/adapter/build/dist/index.min.js"></script>
-					
-					<script>
-					const importer = new FlatfileImporter("b7793ea8-1939-4876-bb48-61b2bafc3c4f", {
-					  type: "imports",
-					  fields: [
-						  {key: "name", label: "Name"},
-						  {key: "email", label: "Email"}
-						],
-					  managed: true,
-					});
-					
-					importer.setCustomer({userId: "12345"});
-					</script>
+					<h1><a href="#">Alliance Partner Portal File Upload Demo</a></h1>
 					<ul class="actions">
-						<li><a href="#" class="button primary icon solid fa-download">Download</a></li>
-						<li><a href="#one" class="button icon solid fa-chevron-down scrolly">Learn More</a></li>
+						<li><button onclick="importer.requestDataFromUser().then(function(results) { 
+							// do something with the results
+							importer.displaySuccess('Thanks for uploading your data!')
+						})">Start Import</button>
+						
+						<script src="https://unpkg.com/@flatfile/adapter/build/dist/index.min.js"></script>
+						
+						<script>
+						const importer = new FlatfileImporter("b7793ea8-1939-4876-bb48-61b2bafc3c4f", {
+						  type: "imports",
+						  fields: [
+							  {key: "name", label: "Name"},
+							  {key: "email", label: "Email"}
+							],
+						  managed: true,
+						});
+						
+						importer.setCustomer({userId: "12345"});
+						</script></li>
 					</ul>
 				</div>
 				<div class="image phone"><div class="inner"><img src="images/screen.jpg" alt="" /></div></div>
